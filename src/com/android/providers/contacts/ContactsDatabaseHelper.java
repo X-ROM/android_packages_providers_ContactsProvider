@@ -946,6 +946,9 @@ public class ContactsDatabaseHelper extends SQLiteOpenHelper {
                 + " BEGIN "
                 + replaceAggregatePresenceSql
                 + " END");
+
+        // Add is_restricted column for Facebook sync to work
+        addIsRestrictedColumn(db);
     }
 
     @Override
